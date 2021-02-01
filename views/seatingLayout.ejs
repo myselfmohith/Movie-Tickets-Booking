@@ -2236,7 +2236,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   // No error Runtime
-  const jsonfile = JSON.parse(<%- JSON.stringify(jsonlayout) %>);
+  const jsonfile = JSON.parse('<%-jsonlayout %>');
   const blockedseats = "<%=movie.totalDays[cdate].shows[show].bookedSeats %>".split(",");
   if (blockedseats.length != 1) blockedseats.forEach(ele => $("#" + ele).addClass("seatbooked"));
 
