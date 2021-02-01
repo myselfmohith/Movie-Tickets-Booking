@@ -1,7 +1,7 @@
 // Imports
 const express = require('express');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/Theater', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOLAB_URI||'mongodb://localhost/Theater', { useNewUrlParser: true, useUnifiedTopology: true });
 const Movie = require("./models/SchmasforDatabase");
 
 // Modules Imports -----------------------------
