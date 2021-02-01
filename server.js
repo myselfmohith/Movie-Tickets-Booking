@@ -1,7 +1,7 @@
 // Imports
 const express = require('express');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI||'mongodb://localhost/Theater', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOLAB_URI ||'mongodb://localhost/Theater', { useNewUrlParser: true, useUnifiedTopology: true });
 const Movie = require("./models/SchmasforDatabase");
 
 // Modules Imports -----------------------------
@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require("express-ejs-layouts"));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.set('views', path.join(__dirname, 'views'));
 
 // Modules and Routers Uses --------------------------------
 
