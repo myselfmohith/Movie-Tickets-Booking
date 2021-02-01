@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require("express-ejs-layouts"));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-app.set('views', path.join(__dirname, 'views'));
 
 // Modules and Routers Uses --------------------------------
 
