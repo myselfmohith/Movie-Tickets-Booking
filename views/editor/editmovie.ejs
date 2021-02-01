@@ -1,0 +1,96 @@
+<form action="/editor/edit/<%=movie.id%>" method="post">
+  <h1><%=movie.movieName%>
+  </h1>
+  <div class="input-vals">
+    <label for="moviename">Edit the Movie Name</label>
+    <input type="text" name="name" id="moviename" required value="<%=movie.movieName%>" />
+  </div>
+  <div class="input-vals">
+    <label for="urlimg">Edit Image URL</label>
+    <input type="text" name="url" id="urlimg" required value="<%=movie.imageURL%>" onchange="setImage(this)"/>
+  </div>
+  <div class="input-vals">
+    <label for="fromdate">From</label>
+    <input type="date" name="fromdate" id="fromdate" required value="<%=movie.fromDate%>" />
+  </div>
+  <div class="input-vals">
+    <label for="todate">To</label>
+    <input type="date" name="todate" id="todate" required value="<%=movie.toDate%>" />
+  </div>
+  <div class="input-vals">
+    <label for="noofshows">Number of Shows per Day</label>
+    <input type="number" name="noofshows" id="noofshows" required value="4" />
+  </div>
+  <img src="<%=movie.imageURL%>"><br>
+  <button type="submit">SAVE</button>
+</form>
+
+
+
+<style>
+  .pagecontainer form h1{
+    margin: 0 auto 20px;
+  }
+
+  .pagecontainer form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .input-vals{
+    margin: 10px;
+    text-align: left;
+  }
+
+  .input-vals *{
+    display: block;
+    outline: none;
+    color: #555555;
+  }
+
+  .input-vals label{
+    margin: 5px;
+    color: grey;
+  }
+
+  .pagecontainer form button{
+    min-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 158, 79, 0.781);
+    color: aliceblue;
+    border: solid 0.5px white;
+  }
+
+  .pagecontainer form img{
+    width: 100px;
+    height: 144px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://ctt.trains.com/sitefiles/images/no-preview-available.png");
+    margin: 25px auto;
+  }
+
+  .input-vals input{
+    width: 90%;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: solid 0.5px grey;
+  }
+
+
+</style>
+
+
+<script>
+  function setImage(obj){
+    document.querySelector("form img").setAttribute("src",obj.value);
+  }
+</script>

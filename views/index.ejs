@@ -1,0 +1,74 @@
+<!-- HTML -->
+  <div class="moviecontainer">
+    <% movies.forEach(movie => { %>
+      <%let senddate = new Date(movie.totalDays[0].date);%>
+      <%if(new Date() >= senddate) senddate=new Date(); %>
+      <a href="/movie/<%=movie.id%>/<%=senddate.toDateString()%>">
+      <div class="movie-card">
+        <div  class="image-flex"  style="background-image: url(<%=movie.imageURL%>)"></div>
+        <p><%=movie.movieName%></p>
+      </div>
+    </a>
+    <% }); %>
+  </div>
+
+<!-- Styles -->
+<style>
+  .moviecontainer {
+    min-width: 360px;
+    max-width: 90%;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-card {
+    width: fit-content;
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 0;
+    transition: 0.5s;
+    border: solid 0.5px #00000010;
+    background-color: rgb(50,55,57);
+    color: rgb(222, 223, 224);
+  }
+
+  .movie-card:hover {
+    transform: translate(0,-10px);
+    box-shadow: 0 0 25px 2px #000000;
+    z-index: 999;
+  }
+
+  .image-flex {
+    min-width: 170px;
+    min-height: 244.8px;
+    background-color: red;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .movie-card p {
+    font-size: 1.2rem;
+    margin: 10px auto auto;
+  }
+
+  @media (min-width: 700px) {
+    .image-flex {
+      width: 250px;
+      height: 360px;
+    }
+
+    .moviecontainer {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+</style>
+
+<!-- Scripts -->

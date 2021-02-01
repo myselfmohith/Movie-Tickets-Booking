@@ -1,0 +1,2273 @@
+<!-- HTML  -->
+
+<!--  30 colums bottom to top i.e, V to A -->
+<div class="bookcontainer">
+  <div>
+    <div class="ticketDiv">
+      <div class="movieimage" style="background-image: url('<%= movie.imageURL %>')"></div>
+      <div class="ticketinfo">
+        <table>
+          <tr>
+            <th>Movie Name</th>
+            <td>
+              <%=movie.movieName%>
+            </td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td>
+              <%= movie.totalDays[cdate].date %>
+            </td>
+          </tr>
+          <tr>
+            <th>Show Time</th>
+            <td>
+              <%= movie.totalDays[cdate].shows[show].showTime %>
+            </td>
+          </tr>
+          <tr>
+            <th>Seats</th>
+            <td id="checkedseats"></td>
+          </tr>
+          <tr>
+            <th>Ticket Price</th>
+            <td id="totalcost">0rs</td>
+          </tr>
+        </table>
+        <a href="" id="printtickets" onclick="javascript:window.print()">Print Tickets</a>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="struct sdum">n</div><span>Empty</span>
+      <div class="struct sdum seatselected">n</div><span>Selected</span>
+      <div class="struct sdum seatbooked">n</div><span>Booked</span>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <h1>SCREEN HERE</h1>
+    <table>
+      <tr>
+        <td colspan="26" style="font-size: 12px;padding: 5px;">Gold Class - 100rs</td>
+      </tr>
+      <tr>
+        <td colspan='30'>
+          <hr>
+        </td>
+      </tr>
+      <!--   V -->
+      <tr>
+        <td>
+          <div class="struct">V</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="V1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="V8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="V20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="V26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">U</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="U1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="U8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="U20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="U26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">T</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="T1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="T8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="T20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="T26">26</div>
+        </td>
+      </tr>
+      <td>
+        <div class="struct">S</div>
+      </td>
+      <td>
+        <div class="struct"></div>
+      </td>
+      <td>
+        <div class="struct seat" id="S1">1</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S2">2</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S3">3</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S4">4</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S5">5</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S6">6</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S7">7</div>
+      </td>
+      <td>
+        <div class="struct"></div>
+      </td>
+      <td>
+        <div class="struct seat" id="S8">8</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S9">9</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S10">10</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S11">11</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S12">12</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S13">13</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S14">14</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S15">15</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S16">16</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S17">17</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S18">18</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S19">19</div>
+      </td>
+      <td>
+        <div class="struct"></div>
+      </td>
+      <td>
+        <div class="struct seat" id="S20">20</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S21">21</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S22">22</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S23">23</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S24">24</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S25">25</div>
+      </td>
+      <td>
+        <div class="struct seat" id="S26">26</div>
+      </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct"></div>
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>
+          <div class="struct">R</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="R1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R7">7</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R12">12</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="R13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="R17">17</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">Q</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="Q26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">P</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="P1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="P8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="P20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="P26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">O</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="O1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="O8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="O20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="O26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">N</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="N1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N7">7</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N12">12</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="N13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="N16">16</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">M</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="M1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="M8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="M20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="M26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">L</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="L1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="L8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="L20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="L26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">K</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="K1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="K8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="K20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="K26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">J</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="J1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="J8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="J20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="J26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">I</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="I1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="I8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="I20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="I26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">H</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="H1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="H8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="H20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="H26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">G</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="G1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="G8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="G20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="G26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">F</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="F1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="F8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="F20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="F26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">E</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="E1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="E8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="E20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="E26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">D</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="D1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="D8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="D20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="D26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">C</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="C1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="C8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="C20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="C26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">B</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="B1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B4">4</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B5">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B7">7</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="B8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B18">18</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B19">19</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="B20">20</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B21">21</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B22">22</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B23">23</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B24">24</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B25">25</div>
+        </td>
+        <td>
+          <div class="struct seat" id="B26">26</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="26" style="font-size: 12px;padding: 5px;">Platinum Class - 250rs</td>
+      </tr>
+      <tr>
+        <td colspan='30'>
+          <hr>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="struct">A</div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct"></div>
+        </td>
+        <td>
+          <div class="struct seat" id="A1">1</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A2">2</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A3">3</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A4">5</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A6">6</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A7">7</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A8">8</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A9">9</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A10">10</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A11">11</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A12">12</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A13">13</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A14">14</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A15">15</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A16">16</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A17">17</div>
+        </td>
+        <td>
+          <div class="struct seat" id="A18">18</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- Scripts -->
+<style>
+  .bookcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 90vw;
+    margin: 25px 0;
+  }
+
+  .struct {
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    transition: 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .seat {
+    font-size: 13px;
+    border: solid 0.01px grey;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .seat:hover {
+    z-index: 999;
+    transform: scale(1.2);
+  }
+
+  .seatbooked {
+    background-color: rgb(13, 20, 24, 25);
+    opacity: 0.2;
+  }
+
+  .seatbooked:hover {
+    cursor: auto;
+    transform: none;
+  }
+
+  .seatselected {
+    border-radius: 6px;
+    transform: scale(1.09);
+    background-color: lightgreen;
+    border-color: lightgreen;
+  }
+
+  .table-responsive {
+    max-width: 90vw;
+    overflow-x: auto;
+  }
+
+  .table-responsive h1 {
+    text-align: center;
+    background-color: rgb(41, 41, 33, 0.2);
+    color: grey;
+    position: sticky;
+    left: 0;
+    border-radius: 40px 40px 0 0;
+    font-size: 25px;
+  }
+
+  .ticketDiv {
+    max-width: 100%;
+    margin: 25px;
+    display: flex;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .ticketDiv .movieimage {
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .ticketDiv table {
+    margin-left: 25px;
+  }
+
+  .ticketDiv th,
+  .ticketDiv td {
+    width: 125px;
+    text-align: left;
+    vertical-align: top;
+    padding: 5px;
+  }
+
+  .ticketDiv td {
+    width: 200px;
+    padding: 5px 10px;
+  }
+
+  .ticketDiv a {
+    display: inline-block;
+    margin: 20px auto;
+    font-size: 20px;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: solid white 0.8px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+  }
+
+  .ticketDiv a:hover {
+    background-color: white;
+    color: rgb(13, 20, 24);
+  }
+
+  .legend{
+    text-align: center;
+  }
+
+  .legend .sdum {
+    font-size: 13px;
+    border: solid 0.01px grey;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .legend * {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: baseline;
+  }
+
+  @media print {
+    * {
+      visibility: hidden;
+    }
+
+    body {
+      background-color: transparent;
+    }
+
+    .ticketDiv * {
+      visibility: visible;
+    }
+
+    .ticketDiv a {
+      visibility: hidden;
+    }
+
+    .ticketDiv {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+</style>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  // No error Runtime
+  const jsonfile = JSON.parse(<%- JSON.stringify(jsonlayout) %>);
+  const blockedseats = "<%=movie.totalDays[cdate].shows[show].bookedSeats %>".split(",");
+  if (blockedseats.length != 1) blockedseats.forEach(ele => $("#" + ele).addClass("seatbooked"));
+
+
+  if (window.location.href[window.location.href.length - 1] != "/") { window.location.href += "/"; }
+  let selectedseats = [];
+  let price = 0;
+  let linkgen = ".";
+  linkgen = window.location.href
+  $("#printtickets").attr("href", linkgen);
+  $(".seat").click(function () {
+    if (!($(this).hasClass("seatbooked"))) {
+      let id = $(this).attr("id");
+      if (selectedseats.includes(id)) {
+        selectedseats = selectedseats.filter(item => item !== id);
+        price = price - Number(jsonfile[id] || jsonfile["default"]);
+      }
+      else {
+        if (selectedseats.length > 5) {
+          alert('You can Slect Only 6 Seats at Max');
+          return;
+        }
+        selectedseats.push(id);
+        price = price + Number(jsonfile[id] || jsonfile["default"]);
+      }
+      $("#checkedseats").text(selectedseats.toLocaleString());
+      linkgen = window.location.href + selectedseats.toLocaleString();
+      $("#printtickets").attr("href", linkgen);
+      $("#totalcost").text(price + "rs");
+      $(this).toggleClass("seatselected");
+    }
+  });
+
+</script>

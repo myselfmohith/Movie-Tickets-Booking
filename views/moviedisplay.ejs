@@ -1,0 +1,136 @@
+<!-- HTML -->
+<div class="container">
+  <div class="movie-image" style="background-image: url(<%=movie.imageURL%>)"></div>
+  <div class="movieinfo">
+    <h1><%=movie.movieName%></h1>
+    <input type="date" name="" id="dateitem" onchange="pageRefresh(this)"><br>
+    <div class="showtimings">
+       <% movie.totalDays[cdate].shows.forEach(ele => { %>
+        <%if(ele.noofBookedTickets < (totalseats/2)){ %>
+          <a class="btn-shows" href="/movie/<%=movie.id%>/<%=movie.totalDays[cdate].date%>/<%=ele.showTime%>"><%= ele.showTime %></a>
+        <% } else if(ele.noofBookedTickets > (totalseats/2) && ele.noofBookedTickets < totalseats) {%>
+          <a class="btn-shows btn-yellow" href="/movie/<%=movie.id%>/<%=movie.totalDays[cdate].date%>/<%=ele.showTime%>"><%= ele.showTime %></a>
+          <% }else{ %>
+            <a class="btn-shows btn-red" href="javascript:void(0)"><%= ele.showTime %></a>
+       <%} }); %>
+    </div>
+  </div>
+</div>
+
+
+<!-- Styles -->
+<style type="text/css">
+  .container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .movie-image {
+    width: 300px;
+    height: 432px;
+    background-size: cover;
+    margin: 25px;
+    border-radius: 10px;
+  }
+
+  .movieinfo {
+    justify-self: flex-start;
+    margin: auto 40px;
+  }
+
+  .showtimings{
+    margin: 25px auto;
+  }
+
+  .btn-shows {
+    display: inline-block;
+    border: solid rgb(64, 226, 43) 1px;
+    box-shadow: 0 0 2px 0;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    color:  rgb(64, 226, 43);
+    transition: 0.2s;
+  }
+
+  #dateitem{
+    font-size: 25px;
+    height: 30px;
+  }
+
+  .btn-yellow{
+    border-color: goldenrod;
+    color: goldenrod;
+  }
+
+  .btn-red{
+    opacity: 0.5;
+    border-color: brown;
+    color: brown;
+  }
+
+  .btn-shows:hover{
+      background-color: rgb(64, 226, 43);
+      color: white;
+  }
+
+  .btn-yellow:hover{
+    background-color: goldenrod;
+    color: white;
+  }
+
+  .btn-red:hover{
+    opacity: 0.5;
+    border-color: brown;
+    color: brown;
+    background-color: transparent;
+  }
+
+  @media (max-width: 700px) {
+    .movie-image {
+      width: 200px;
+      height: 288px;
+    }
+    body{
+      text-align: center;
+    }
+  }
+
+</style>
+
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // Set MinMax Date
+    function temptoDate(xyz){
+        let zyx = new Date(xyz);
+        zyx.setHours(24,0,0,0);
+        return zyx.toISOString().substr(0,10);
+    }
+    function pageRefresh(object){
+      let dates = object.value.split("-");
+      let hrefofpage = (window.location.href).split("/");
+      let tempdate = new Date();
+      tempdate.setFullYear(dates[0],dates[1]-1,dates[2]);
+      hrefofpage[5] = tempdate.toDateString();
+      window.location.href = hrefofpage.toLocaleString().replaceAll(",","/");
+    }
+
+
+
+
+    // Min and Max Date and Current date
+    $("#dateitem").attr("min",temptoDate("<%- movie.totalDays[0].date %>"));
+    if(new Date() >= new Date("<%- movie.totalDays[0].date %>")){
+      $("#dateitem").attr("min",temptoDate((new Date()).toDateString()));
+    }
+    $("#dateitem").attr("max",temptoDate("<%- movie.totalDays[movie.totalDays.length - 1].date %>"));
+    $("#dateitem").attr("value",temptoDate("<%- movie.totalDays[cdate].date %>"));
+
+</script>

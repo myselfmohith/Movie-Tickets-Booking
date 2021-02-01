@@ -1,0 +1,75 @@
+<!-- HTML -->
+<div class="editor-index">
+  <table>
+    <tr>
+      <th>Movie</th>
+      <th>Image</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Daily Shows</th>
+      <th>Edit Option</th>
+      <th>Delete Option</th>
+    </tr>
+    <% movies.forEach((movie) => { %>
+    <tr>
+      <td style="font-weight: 500;"><%= movie.movieName %></td>
+      <td><div class="urlimage" style="background-image: url('<%=movie.imageURL%>');"></div></td>
+      <td><%= movie.fromDate %></td>
+      <td><%= movie.toDate %></td>
+      <td><%= movie.numberofshows %></td>
+      <td style="text-align: center;color: skyblue;"><a href="/editor/edit/<%=movie.id%>">Edit</a></td>
+      <td style="text-align: center;color: red;"><a href="/editor/delete/<%=movie.id%>">Delete</a></td>
+    </tr>
+    <% }); %>
+    <tr>
+      <td colspan="7" style="text-align: center;background-color: rgba(4, 155, 17, 0.05);"><a href="/editor/newmovie"><i class="fas fa-plus-square fa-2x"></i></a></td>
+    </tr>
+  </table>
+</div>
+
+<style>
+  .pagecontainer{
+    display: block;
+  }
+
+  .editor-index{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    overflow-x: auto;
+  }
+
+  .editor-index table{
+    min-width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    height: fit-content;
+  }
+
+  .editor-index table tr:nth-child(odd){
+    background-color: rgb(38,45,49);
+  }
+
+  .urlimage{
+    width: 80px;
+    height: 115px;
+    background-size: cover;
+    margin: auto;
+  }
+
+  .editor-index table th{
+    font-size: 25px;
+    font-weight: 300;
+  }
+
+  .editor-index table td{
+    font-size: 20px;
+  }
+
+  .editor-index table th,td{
+    min-width: 120px;
+    padding: 10px;
+    text-align: justify;
+    border: solid 0.5px rgb(0,0,0,0.06);
+  }
+
+</style>

@@ -1,0 +1,105 @@
+<form action="/editor" method="POST">
+  <h1>Add New Movie</h1>
+  <div class="input-vals">
+    <label for="moviename">Movie Name</label>
+    <input type="text" name="name" id="moviename" required />
+  </div>
+  <div class="input-vals">
+    <label for="urlimg">Image URL</label>
+    <input type="text" name="url" id="urlimg" required onchange="setImage(this)"/>
+  </div>
+  <div class="input-vals">
+    <label for="fromdate">From</label>
+    <input type="date" name="fromdate" id="fromdate" required />
+  </div>
+  <div class="input-vals">
+    <label for="todate">To(default : 10days from now)</label>
+    <input type="date" name="todate" id="todate" required />
+  </div>
+  <div class="input-vals">
+    <label for="noofshows">Shows per Day</label>
+    <input type="number" name="noofshows" id="noofshows" required value="4" min="1" max="4"/>
+  </div>
+  <img src=""><br>
+  <button type="submit">SAVE</button>
+</form>
+
+
+<style>
+  .pagecontainer form h1{
+    margin: 0 auto 20px;
+  }
+
+  .pagecontainer form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .input-vals{
+    margin: 10px;
+    text-align: left;
+  }
+
+  .input-vals *{
+    display: block;
+    outline: none;
+    color: #555555;
+  }
+
+  .input-vals label{
+    margin: 5px;
+    color: grey;
+  }
+
+  .pagecontainer form button{
+    min-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 158, 79, 0.781);
+    color: aliceblue;
+    border: solid 0.5px white;
+  }
+
+  .pagecontainer form img{
+    width: 100px;
+    height: 144px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://ctt.trains.com/sitefiles/images/no-preview-available.png");
+    margin: 25px auto;
+  }
+
+  .input-vals input{
+    width: 90%;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: solid 0.5px grey;
+  }
+
+
+</style>
+
+
+<script>
+  let tdate = new Date();
+  tdate.setHours(24,0,0,0)
+  let enddate = tdate;
+  tdate = tdate.toISOString().substr(0,10);
+  enddate.setDate(enddate.getDate()+5);
+  enddate = enddate.toISOString().substr(0,10);
+  document.querySelector("#fromdate").setAttribute("min",tdate);
+  document.querySelector("#fromdate").setAttribute("value",tdate);
+  document.querySelector("#todate").setAttribute("value",enddate);
+
+  function setImage(obj){
+    document.querySelector("form img").setAttribute("src",obj.value);
+  }
+
+</script>
