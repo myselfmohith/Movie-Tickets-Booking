@@ -1,6 +1,4 @@
 {
-    "B8" : 100,
-    "A10" : 200,
-    "default": 70,
+    "default": 100,
     "totalseats" : 150
 }
