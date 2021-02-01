@@ -17,7 +17,7 @@ route.get("/:id/:date/:showtime", async (req, res) => {
     let movie = await Movie.findById(req.params.id); 
     let cdate = await movie.totalDays.findIndex(ele => ele.date === req.params.date);
     let show = await movie.totalDays[cdate].shows.findIndex(ele => ele.showTime === req.params.showtime);
-    res.render("seatinglayout", { jsonlayout: jsonlayout, movie: movie, cdate: cdate, show: show });
+    res.render("fixedLayout/seatingLayout", { jsonlayout: jsonlayout, movie: movie, cdate: cdate, show: show });
 })
 
 
